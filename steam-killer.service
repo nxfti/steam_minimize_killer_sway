@@ -1,0 +1,15 @@
+# License: MIT
+
+[Unit]
+Description=Steam Auto Killer for Sway (Event Driven)
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/env zsh /opt/cron.jobs/steam_minimize_killer/steam_window_killer_sway.zsh
+Restart=always
+RestartSec=2
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target
